@@ -1,4 +1,6 @@
 import { Box, createStyles, MantineProvider } from '@mantine/core'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { ChannelStaticstics } from './module/channel-statistics'
 
 const styles = createStyles((theme) => ({
@@ -21,6 +23,7 @@ function App() {
 		>
 			<div className='App'>
 				<Box className={classes.root}>
+					<ToastContainer />
 					<ChannelStaticstics />
 				</Box>
 			</div>

@@ -14,6 +14,7 @@ import { useForm } from '@mantine/form'
 import Confetti from 'react-confetti'
 import { ChannelAPI } from '../../api'
 import { ChannelService } from '../../services/channel'
+import { toast } from 'react-toastify'
 
 export interface ChannelStatsData {
 	viewCount: string
@@ -64,6 +65,7 @@ export const ChannelStaticstics: React.FC = () => {
 			setConfettiCount(0)
 		} catch (error) {
 			console.error(error)
+			toast((error as Error).message, { type: 'error' })
 		} finally {
 			setIsLoading(false)
 		}
